@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Eman</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Task Manager</h1>
+            <p>Organize your daily tasks easily</p>
+        </header>
+
+        <div class="form-card">
+            <h3 id="formTitle">Add New Task</h3>
+            <form id="taskForm">
+                <input type="text" id="taskTitle" placeholder="Enter task title...">
+                <textarea id="taskDesc" placeholder="Enter description (optional)"></textarea>
+                <div class="form-row">
+                    <input type="date" id="taskDate">
+                    <select id="taskPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn">Add Task</button>
+                <button type="button" id="cancelBtn" style="display:none;">Cancel</button>
+            </form>
+            <p id="errorMsg" class="error"></p>
+            <p id="successMsg" class="success"></p>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search tasks...">
+            <div class="filter-btns">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="pending">Pending</button>
+                <button class="filter" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span id="totalTasks">Total: 0</span>
+            <span id="pendingTasks">Pending: 0</span>
+            <span id="completedTasks">Completed: 0</span>
+        </div>
+
+        <div id="taskList" class="task-list">
+            <!-- tasks will show here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
